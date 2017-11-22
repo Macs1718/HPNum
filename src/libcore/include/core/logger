@@ -1,0 +1,4 @@
+# include "core/logger.hpp"
+# include "core/log_to_std_output.hpp"
+# include "core/log_to_std_error.hpp"
+# include "core/log_to_file.hpp"

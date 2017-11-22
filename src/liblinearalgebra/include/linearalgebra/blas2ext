@@ -1,0 +1,7 @@
+#ifndef _LINEARALGEBRA_BLASEXT2_
+# define _LINEARALGEBRA_BLASEXT2_
+
+# include "linearalgebra/blas2ext.hpp"
+# include "linearalgebra/blas2ext.tpp"
+
+#endif

@@ -1,0 +1,48 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8 FATAL_ERROR)
+PROJECT(libcore LANGUAGES CXX)
+
+ADD_LIBRARY(core SHARED
+  src/logger.cpp
+  src/log_to_file.cpp
+  src/log_to_std_error.cpp
+  src/log_to_std_output.cpp
+  src/multitimer.cpp
+  src/chronometer.cpp
+  src/std_cpp_chronometer.cpp
+  src/numerical_precision.cpp)
+
+TARGET_INCLUDE_DIRECTORIES(core PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>
+  PRIVATE src)
+
+TARGET_COMPILE_FEATURES(core
+  PUBLIC cxx_auto_type
+  PRIVATE cxx_variadic_templates)
+
+#TARGET_LINK_LIBRARIES(core (librairie externe à linker))
+INSTALL(TARGETS core EXPORT coreconfig
+  ARCHIVE  DESTINATION lib
+  LIBRARY  DESTINATION lib
+  RUNTIME  DESTINATION bin)  # This is for Windows
+
+INSTALL(DIRECTORY include/ DESTINATION include)
+
+INSTALL(EXPORT coreconfig DESTINATION share/core/cmake)
+
+EXPORT(TARGETS core FILE coreconfig.cmake)
+
+ADD_EXECUTABLE(test_logger test/test_logger.cpp)
+TARGET_LINK_LIBRARIES(test_logger core)
+
+ADD_TEST(test_logger test_logger)
+
+ADD_EXECUTABLE(test_multitimer test/test_multitimer.cpp)
+TARGET_LINK_LIBRARIES(test_multitimer core)
+
+ADD_TEST(test_multitimer test_multitimer)
+
+ADD_EXECUTABLE(test_range test/test_range.cpp)
+TARGET_LINK_LIBRARIES(test_range core)
+
+ADD_TEST(test_range test_range)

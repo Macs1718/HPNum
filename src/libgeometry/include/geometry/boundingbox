@@ -1,0 +1,7 @@
+#ifndef _GEOMETRY_BOUNDINGBOX_
+# define _GEOMETRY_BOUNDINGBOX_
+
+# include "BoundingBox.hpp"
+# include "BoundingBox.tpp"
+
+#endif

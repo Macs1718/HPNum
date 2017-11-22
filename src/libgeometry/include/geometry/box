@@ -1,0 +1,9 @@
+#ifndef _GEOMETRY_BOX_
+# define _GEOMETRY_BOX_
+
+# include "geometry/box.hpp"
+namespace Geometry
+{
+#   include "geometry/box.tpp"
+}
+#endif

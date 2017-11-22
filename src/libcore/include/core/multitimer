@@ -1,0 +1,6 @@
+
+#ifndef _CORE_MULTITIMER_HPP_
+# define _CORE_MULTITIMER_HPP_
+# include "core/multitimer.hpp"
+# include "core/multitimer.tpp"
+#endif

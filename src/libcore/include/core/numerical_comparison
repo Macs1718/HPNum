@@ -1,0 +1,7 @@
+# ifndef _CORE_NUMERICAL_COMPARISON
+# define _CORE_NUMERICAL_COMPARISON
+
+# include "numerical_comparison.hpp"
+# include "numerical_comparison.tpp"
+
+#endif

@@ -1,0 +1,5 @@
+#ifndef _GEOMETRY_KDTREE_
+#define _GEOMETRY_KDTREE_
+#  include "kdtree.hpp"
+#  include "kdtree.tpp"
+#endif

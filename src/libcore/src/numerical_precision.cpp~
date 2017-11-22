@@ -1,0 +1,18 @@
+# include <complex>
+
+# include "core/numerical_comparison"
+
+template<> const float Numerical::Tolerance<float>::epsilon  = 1.E-8f;
+template<> bool Numerical::nearlyEqual<float>( const float& a, const float& b, float eps );
+
+
+template<> const double Numerical::Tolerance<double>::epsilon = 1.E-14;
+template<> bool Numerical::nearlyEqual<double>( const double& a, const double& b,
+						    Numerical::Tolerance<double>::real_t eps );
+
+template<> const float Numerical::Tolerance<std::complex<float>>::epsilon = 1.E-8f;
+template<> bool Numerical::nearlyEqual(const std::complex<float>& a,const std::complex<float>& b,float eps);
+
+template<> const double Numerical::Tolerance<std::complex<double>>::epsilon = 1.E-14;
+template<> bool Numerical::nearlyEqual(const std::complex<double>& a,const std::complex<double>& b,
+					   double eps);

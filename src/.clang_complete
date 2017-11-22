@@ -1,0 +1,5 @@
+-I./libgui/include
+-I./libcore/include
+-I./libgeometry/include
+-I./libparallel/include
+-I./liblinearalgebra/include
